@@ -1,18 +1,33 @@
 cmake_minimum_required(VERSION 3.1.0)
+
 project(TETRIS)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED on)
-set(CMAKE_CXX_EXTENSIONS off)
-
-find_package(Qt5Widgets REQUIRED)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-add_compile_options(-Wall -Wpedantic)
+if(CMAKE_VERSION VERSION_LESS "3.7.0")
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
-add_executable(${PROJECT_NAME} main.cc engine.cc window.cc)
-target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+add_executable(TETRIS
+   main.cc
+   gestionnaire.cc
+   patternwidget.cc
+   engine.cc
+   game.cc
+   menu.cc
+   mode.cc
+   tetrimino.cc
+   baton.cc
+   carre.cc
+   te.cc
+   lambda.cc
+   gamma.cc
+   biais.cc
+   biaisinv.cc
+)
+
+target_link_libraries(TETRIS Qt5::Widgets)

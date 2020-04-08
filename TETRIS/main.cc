@@ -1,12 +1,14 @@
 #include <iostream>
 #include <QApplication>
+#include <ctime>
 
-#include "window.hh"
+#include "gestionnaire.h"
 
 int main(int argc, char *argv[]) {
 
+    std::srand(std::time(nullptr));
+
     QApplication app(argc,argv);
-    window w;
-    w.show();
+    gestionnaire g;
     return app.exec();
 }
