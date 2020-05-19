@@ -179,6 +179,168 @@ TETRIS_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/TETRIS_autogen/mocs_compilation.cpp.s
 .PHONY : TETRIS_autogen/mocs_compilation.cpp.s
 
+baton.obj: baton.cc.obj
+
+.PHONY : baton.obj
+
+# target to build an object file
+baton.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/baton.cc.obj
+.PHONY : baton.cc.obj
+
+baton.i: baton.cc.i
+
+.PHONY : baton.i
+
+# target to preprocess a source file
+baton.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/baton.cc.i
+.PHONY : baton.cc.i
+
+baton.s: baton.cc.s
+
+.PHONY : baton.s
+
+# target to generate assembly for a file
+baton.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/baton.cc.s
+.PHONY : baton.cc.s
+
+biais.obj: biais.cc.obj
+
+.PHONY : biais.obj
+
+# target to build an object file
+biais.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biais.cc.obj
+.PHONY : biais.cc.obj
+
+biais.i: biais.cc.i
+
+.PHONY : biais.i
+
+# target to preprocess a source file
+biais.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biais.cc.i
+.PHONY : biais.cc.i
+
+biais.s: biais.cc.s
+
+.PHONY : biais.s
+
+# target to generate assembly for a file
+biais.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biais.cc.s
+.PHONY : biais.cc.s
+
+biaisinv.obj: biaisinv.cc.obj
+
+.PHONY : biaisinv.obj
+
+# target to build an object file
+biaisinv.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biaisinv.cc.obj
+.PHONY : biaisinv.cc.obj
+
+biaisinv.i: biaisinv.cc.i
+
+.PHONY : biaisinv.i
+
+# target to preprocess a source file
+biaisinv.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biaisinv.cc.i
+.PHONY : biaisinv.cc.i
+
+biaisinv.s: biaisinv.cc.s
+
+.PHONY : biaisinv.s
+
+# target to generate assembly for a file
+biaisinv.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/biaisinv.cc.s
+.PHONY : biaisinv.cc.s
+
+carre.obj: carre.cc.obj
+
+.PHONY : carre.obj
+
+# target to build an object file
+carre.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/carre.cc.obj
+.PHONY : carre.cc.obj
+
+carre.i: carre.cc.i
+
+.PHONY : carre.i
+
+# target to preprocess a source file
+carre.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/carre.cc.i
+.PHONY : carre.cc.i
+
+carre.s: carre.cc.s
+
+.PHONY : carre.s
+
+# target to generate assembly for a file
+carre.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/carre.cc.s
+.PHONY : carre.cc.s
+
+database.obj: database.cc.obj
+
+.PHONY : database.obj
+
+# target to build an object file
+database.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/database.cc.obj
+.PHONY : database.cc.obj
+
+database.i: database.cc.i
+
+.PHONY : database.i
+
+# target to preprocess a source file
+database.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/database.cc.i
+.PHONY : database.cc.i
+
+database.s: database.cc.s
+
+.PHONY : database.s
+
+# target to generate assembly for a file
+database.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/database.cc.s
+.PHONY : database.cc.s
+
+endscreen.obj: endscreen.cc.obj
+
+.PHONY : endscreen.obj
+
+# target to build an object file
+endscreen.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/endscreen.cc.obj
+.PHONY : endscreen.cc.obj
+
+endscreen.i: endscreen.cc.i
+
+.PHONY : endscreen.i
+
+# target to preprocess a source file
+endscreen.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/endscreen.cc.i
+.PHONY : endscreen.cc.i
+
+endscreen.s: endscreen.cc.s
+
+.PHONY : endscreen.s
+
+# target to generate assembly for a file
+endscreen.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/endscreen.cc.s
+.PHONY : endscreen.cc.s
+
 engine.obj: engine.cc.obj
 
 .PHONY : engine.obj
@@ -205,6 +367,141 @@ engine.s: engine.cc.s
 engine.cc.s:
 	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/engine.cc.s
 .PHONY : engine.cc.s
+
+game.obj: game.cc.obj
+
+.PHONY : game.obj
+
+# target to build an object file
+game.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/game.cc.obj
+.PHONY : game.cc.obj
+
+game.i: game.cc.i
+
+.PHONY : game.i
+
+# target to preprocess a source file
+game.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/game.cc.i
+.PHONY : game.cc.i
+
+game.s: game.cc.s
+
+.PHONY : game.s
+
+# target to generate assembly for a file
+game.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/game.cc.s
+.PHONY : game.cc.s
+
+gamma.obj: gamma.cc.obj
+
+.PHONY : gamma.obj
+
+# target to build an object file
+gamma.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gamma.cc.obj
+.PHONY : gamma.cc.obj
+
+gamma.i: gamma.cc.i
+
+.PHONY : gamma.i
+
+# target to preprocess a source file
+gamma.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gamma.cc.i
+.PHONY : gamma.cc.i
+
+gamma.s: gamma.cc.s
+
+.PHONY : gamma.s
+
+# target to generate assembly for a file
+gamma.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gamma.cc.s
+.PHONY : gamma.cc.s
+
+gestionnaire.obj: gestionnaire.cc.obj
+
+.PHONY : gestionnaire.obj
+
+# target to build an object file
+gestionnaire.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gestionnaire.cc.obj
+.PHONY : gestionnaire.cc.obj
+
+gestionnaire.i: gestionnaire.cc.i
+
+.PHONY : gestionnaire.i
+
+# target to preprocess a source file
+gestionnaire.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gestionnaire.cc.i
+.PHONY : gestionnaire.cc.i
+
+gestionnaire.s: gestionnaire.cc.s
+
+.PHONY : gestionnaire.s
+
+# target to generate assembly for a file
+gestionnaire.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/gestionnaire.cc.s
+.PHONY : gestionnaire.cc.s
+
+helper.obj: helper.cc.obj
+
+.PHONY : helper.obj
+
+# target to build an object file
+helper.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/helper.cc.obj
+.PHONY : helper.cc.obj
+
+helper.i: helper.cc.i
+
+.PHONY : helper.i
+
+# target to preprocess a source file
+helper.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/helper.cc.i
+.PHONY : helper.cc.i
+
+helper.s: helper.cc.s
+
+.PHONY : helper.s
+
+# target to generate assembly for a file
+helper.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/helper.cc.s
+.PHONY : helper.cc.s
+
+lambda.obj: lambda.cc.obj
+
+.PHONY : lambda.obj
+
+# target to build an object file
+lambda.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/lambda.cc.obj
+.PHONY : lambda.cc.obj
+
+lambda.i: lambda.cc.i
+
+.PHONY : lambda.i
+
+# target to preprocess a source file
+lambda.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/lambda.cc.i
+.PHONY : lambda.cc.i
+
+lambda.s: lambda.cc.s
+
+.PHONY : lambda.s
+
+# target to generate assembly for a file
+lambda.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/lambda.cc.s
+.PHONY : lambda.cc.s
 
 main.obj: main.cc.obj
 
@@ -233,32 +530,248 @@ main.cc.s:
 	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/main.cc.s
 .PHONY : main.cc.s
 
-window.obj: window.cc.obj
+menu.obj: menu.cc.obj
 
-.PHONY : window.obj
+.PHONY : menu.obj
 
 # target to build an object file
-window.cc.obj:
-	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/window.cc.obj
-.PHONY : window.cc.obj
+menu.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/menu.cc.obj
+.PHONY : menu.cc.obj
 
-window.i: window.cc.i
+menu.i: menu.cc.i
 
-.PHONY : window.i
+.PHONY : menu.i
 
 # target to preprocess a source file
-window.cc.i:
-	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/window.cc.i
-.PHONY : window.cc.i
+menu.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/menu.cc.i
+.PHONY : menu.cc.i
 
-window.s: window.cc.s
+menu.s: menu.cc.s
 
-.PHONY : window.s
+.PHONY : menu.s
 
 # target to generate assembly for a file
-window.cc.s:
-	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/window.cc.s
-.PHONY : window.cc.s
+menu.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/menu.cc.s
+.PHONY : menu.cc.s
+
+mode.obj: mode.cc.obj
+
+.PHONY : mode.obj
+
+# target to build an object file
+mode.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/mode.cc.obj
+.PHONY : mode.cc.obj
+
+mode.i: mode.cc.i
+
+.PHONY : mode.i
+
+# target to preprocess a source file
+mode.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/mode.cc.i
+.PHONY : mode.cc.i
+
+mode.s: mode.cc.s
+
+.PHONY : mode.s
+
+# target to generate assembly for a file
+mode.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/mode.cc.s
+.PHONY : mode.cc.s
+
+music.obj: music.cc.obj
+
+.PHONY : music.obj
+
+# target to build an object file
+music.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/music.cc.obj
+.PHONY : music.cc.obj
+
+music.i: music.cc.i
+
+.PHONY : music.i
+
+# target to preprocess a source file
+music.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/music.cc.i
+.PHONY : music.cc.i
+
+music.s: music.cc.s
+
+.PHONY : music.s
+
+# target to generate assembly for a file
+music.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/music.cc.s
+.PHONY : music.cc.s
+
+patternwidget.obj: patternwidget.cc.obj
+
+.PHONY : patternwidget.obj
+
+# target to build an object file
+patternwidget.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/patternwidget.cc.obj
+.PHONY : patternwidget.cc.obj
+
+patternwidget.i: patternwidget.cc.i
+
+.PHONY : patternwidget.i
+
+# target to preprocess a source file
+patternwidget.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/patternwidget.cc.i
+.PHONY : patternwidget.cc.i
+
+patternwidget.s: patternwidget.cc.s
+
+.PHONY : patternwidget.s
+
+# target to generate assembly for a file
+patternwidget.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/patternwidget.cc.s
+.PHONY : patternwidget.cc.s
+
+powerbutton.obj: powerbutton.cc.obj
+
+.PHONY : powerbutton.obj
+
+# target to build an object file
+powerbutton.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerbutton.cc.obj
+.PHONY : powerbutton.cc.obj
+
+powerbutton.i: powerbutton.cc.i
+
+.PHONY : powerbutton.i
+
+# target to preprocess a source file
+powerbutton.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerbutton.cc.i
+.PHONY : powerbutton.cc.i
+
+powerbutton.s: powerbutton.cc.s
+
+.PHONY : powerbutton.s
+
+# target to generate assembly for a file
+powerbutton.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerbutton.cc.s
+.PHONY : powerbutton.cc.s
+
+powerup.obj: powerup.cc.obj
+
+.PHONY : powerup.obj
+
+# target to build an object file
+powerup.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerup.cc.obj
+.PHONY : powerup.cc.obj
+
+powerup.i: powerup.cc.i
+
+.PHONY : powerup.i
+
+# target to preprocess a source file
+powerup.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerup.cc.i
+.PHONY : powerup.cc.i
+
+powerup.s: powerup.cc.s
+
+.PHONY : powerup.s
+
+# target to generate assembly for a file
+powerup.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/powerup.cc.s
+.PHONY : powerup.cc.s
+
+te.obj: te.cc.obj
+
+.PHONY : te.obj
+
+# target to build an object file
+te.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/te.cc.obj
+.PHONY : te.cc.obj
+
+te.i: te.cc.i
+
+.PHONY : te.i
+
+# target to preprocess a source file
+te.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/te.cc.i
+.PHONY : te.cc.i
+
+te.s: te.cc.s
+
+.PHONY : te.s
+
+# target to generate assembly for a file
+te.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/te.cc.s
+.PHONY : te.cc.s
+
+tetrimino.obj: tetrimino.cc.obj
+
+.PHONY : tetrimino.obj
+
+# target to build an object file
+tetrimino.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetrimino.cc.obj
+.PHONY : tetrimino.cc.obj
+
+tetrimino.i: tetrimino.cc.i
+
+.PHONY : tetrimino.i
+
+# target to preprocess a source file
+tetrimino.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetrimino.cc.i
+.PHONY : tetrimino.cc.i
+
+tetrimino.s: tetrimino.cc.s
+
+.PHONY : tetrimino.s
+
+# target to generate assembly for a file
+tetrimino.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetrimino.cc.s
+.PHONY : tetrimino.cc.s
+
+tetriminobombe.obj: tetriminobombe.cc.obj
+
+.PHONY : tetriminobombe.obj
+
+# target to build an object file
+tetriminobombe.cc.obj:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetriminobombe.cc.obj
+.PHONY : tetriminobombe.cc.obj
+
+tetriminobombe.i: tetriminobombe.cc.i
+
+.PHONY : tetriminobombe.i
+
+# target to preprocess a source file
+tetriminobombe.cc.i:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetriminobombe.cc.i
+.PHONY : tetriminobombe.cc.i
+
+tetriminobombe.s: tetriminobombe.cc.s
+
+.PHONY : tetriminobombe.s
+
+# target to generate assembly for a file
+tetriminobombe.cc.s:
+	$(MAKE) -f CMakeFiles\TETRIS.dir\build.make CMakeFiles/TETRIS.dir/tetriminobombe.cc.s
+.PHONY : tetriminobombe.cc.s
 
 # Help Target
 help:
@@ -273,15 +786,72 @@ help:
 	@echo ... TETRIS_autogen/mocs_compilation.obj
 	@echo ... TETRIS_autogen/mocs_compilation.i
 	@echo ... TETRIS_autogen/mocs_compilation.s
+	@echo ... baton.obj
+	@echo ... baton.i
+	@echo ... baton.s
+	@echo ... biais.obj
+	@echo ... biais.i
+	@echo ... biais.s
+	@echo ... biaisinv.obj
+	@echo ... biaisinv.i
+	@echo ... biaisinv.s
+	@echo ... carre.obj
+	@echo ... carre.i
+	@echo ... carre.s
+	@echo ... database.obj
+	@echo ... database.i
+	@echo ... database.s
+	@echo ... endscreen.obj
+	@echo ... endscreen.i
+	@echo ... endscreen.s
 	@echo ... engine.obj
 	@echo ... engine.i
 	@echo ... engine.s
+	@echo ... game.obj
+	@echo ... game.i
+	@echo ... game.s
+	@echo ... gamma.obj
+	@echo ... gamma.i
+	@echo ... gamma.s
+	@echo ... gestionnaire.obj
+	@echo ... gestionnaire.i
+	@echo ... gestionnaire.s
+	@echo ... helper.obj
+	@echo ... helper.i
+	@echo ... helper.s
+	@echo ... lambda.obj
+	@echo ... lambda.i
+	@echo ... lambda.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... window.obj
-	@echo ... window.i
-	@echo ... window.s
+	@echo ... menu.obj
+	@echo ... menu.i
+	@echo ... menu.s
+	@echo ... mode.obj
+	@echo ... mode.i
+	@echo ... mode.s
+	@echo ... music.obj
+	@echo ... music.i
+	@echo ... music.s
+	@echo ... patternwidget.obj
+	@echo ... patternwidget.i
+	@echo ... patternwidget.s
+	@echo ... powerbutton.obj
+	@echo ... powerbutton.i
+	@echo ... powerbutton.s
+	@echo ... powerup.obj
+	@echo ... powerup.i
+	@echo ... powerup.s
+	@echo ... te.obj
+	@echo ... te.i
+	@echo ... te.s
+	@echo ... tetrimino.obj
+	@echo ... tetrimino.i
+	@echo ... tetrimino.s
+	@echo ... tetriminobombe.obj
+	@echo ... tetriminobombe.i
+	@echo ... tetriminobombe.s
 .PHONY : help
 
 

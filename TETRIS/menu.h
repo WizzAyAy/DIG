@@ -4,21 +4,27 @@
 
 #include <QtWidgets>
 
-class menu : patternWidget
+/*
+*   class qui represente le menu principal du jeu
+*/
+
+class menu : public patternWidget
 {
-    Q_OBJECT
 public:
     menu();
+    //montre/cache et active/desactive le menu
     void hideMenu();
     void showMenu();
-    QPushButton* getPlayButton(){return _play;}
 
-signals:
-    void play();
+    QPushButton* getPlayButton(){return _play;}
+    QPushButton* getHelperButton(){return _helper;}
+
+    void paintEvent(QPaintEvent *s);
 
 private:
     QPushButton* _play;
     QPushButton* _leave;
+    QPushButton* _helper;
 
     QVBoxLayout* _verticalLayout;
 };

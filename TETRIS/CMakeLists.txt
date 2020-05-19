@@ -11,14 +11,21 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5Multimedia REQUIRED)
 
 add_executable(TETRIS
    main.cc
    gestionnaire.cc
+   database.cc
+   music.cc
    patternwidget.cc
    engine.cc
    game.cc
+   powerUp.cc
+   powerbutton.cc
    menu.cc
+   helper.cc
+   endscreen.cc
    mode.cc
    tetrimino.cc
    baton.cc
@@ -28,6 +35,7 @@ add_executable(TETRIS
    gamma.cc
    biais.cc
    biaisinv.cc
+   tetriminobombe.cc
 )
 
-target_link_libraries(TETRIS Qt5::Widgets)
+target_link_libraries(TETRIS Qt5::Widgets Qt5::Multimedia)

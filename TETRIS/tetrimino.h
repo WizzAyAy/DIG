@@ -4,6 +4,10 @@
 #include <string>
 #include <QColor>
 
+/*
+ * class virtuel pure pour la creation de tous les tetriminos
+*/
+
 struct pos{
     size_t ligne;
     size_t col;
@@ -34,7 +38,7 @@ public:
     virtual QColor getColor() = 0;
 
     /*-------------------MATHS-------------------*/
-    //effectue une rotation de 90 ou -90 deg selon le centre du tetrimino
+    //effectue une rotation de 90 ou -90 deg selon le centre du tetrimino (angle = 1 ou -1)
     pos rotatePoint(float pligne, float pcol, float angle);
 
 protected:

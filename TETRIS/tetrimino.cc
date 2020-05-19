@@ -52,7 +52,7 @@ void tetrimino::transRight(){
     bool collerGauche = false;
     for(auto x : _lesPos) if(x.col == 9) collerGauche = true;
     if(collerGauche){
-         std::cout << "deplacement pas possible\n";
+         //std::cout << "deplacement pas possible\n";
     }
     else{
         for(auto &x : _lesPos){

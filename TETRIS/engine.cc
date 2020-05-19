@@ -13,6 +13,7 @@
 #include "gamma.h"
 #include "biais.h"
 #include "biaisinv.h"
+#include "tetriminobombe.h"
 
 
 /*-------------------CONTRUCTEUR && INIT-------------------*/
@@ -20,6 +21,9 @@ engine::engine()
     :QObject(), _nbCol(10), _nbLig(20){
     initMatrix();
     initVectorTetrimino();
+    initHoldingTetrimino();
+
+    _holdThisTurn = false;
 
     setCurrentTetrimino(_nextTetriminos.front());
     _nextTetriminos.erase(_nextTetriminos.begin());
@@ -33,8 +37,13 @@ void engine::restartEngine(){
     _nextTetriminos.clear();
     initVectorTetrimino();
 
+    initHoldingTetrimino();
+
+    _holdThisTurn = false;
+
     setCurrentTetrimino(_nextTetriminos.front());
     _nextTetriminos.erase(_nextTetriminos.begin());
+    addCurrentTetrimino();
     emit tetriminoChanged();
 }
 
@@ -56,7 +65,7 @@ void engine::initVectorTetrimino(){
 
 void engine::addRandomTetrimino(){
     int tmp = std::rand()/((RAND_MAX + 1)/7);
-    std::cout << tmp << std::endl;
+    //std::cout << tmp << std::endl;
     if(tmp == 0) _nextTetriminos.push_back(new baton(0,4));
     if(tmp == 1) _nextTetriminos.push_back(new carre(0,4));
     if(tmp == 2) _nextTetriminos.push_back(new te(0,4));
@@ -64,6 +73,26 @@ void engine::addRandomTetrimino(){
     if(tmp == 4) _nextTetriminos.push_back(new gamma(0,4));
     if(tmp == 5) _nextTetriminos.push_back(new biais(0,4));
     if(tmp == 6) _nextTetriminos.push_back(new biaisInv(0,4));
+}
+
+void engine::setHoldingTetrimino(){
+    if(_currentTetrimino->getNom() == "baton") _holdingTetrimino = new baton(0,4);
+    if(_currentTetrimino->getNom() == "carre") _holdingTetrimino = new carre(0,4);
+    if(_currentTetrimino->getNom() == "te") _holdingTetrimino = new te(0,4);
+    if(_currentTetrimino->getNom() == "lambda") _holdingTetrimino = new lambda(0,4);
+    if(_currentTetrimino->getNom() == "gamma") _holdingTetrimino = new gamma(0,4);
+    if(_currentTetrimino->getNom() == "biais") _holdingTetrimino = new biais(0,4);
+    if(_currentTetrimino->getNom() == "biaisInv") _holdingTetrimino = new biaisInv(0,4);
+}
+
+void engine::setHoldingTetrimino(const std::string &n){
+    if(n == "baton") _holdingTetrimino = new baton(0,4);
+    if(n == "carre") _holdingTetrimino = new carre(0,4);
+    if(n == "te") _holdingTetrimino = new te(0,4);
+    if(n == "lambda") _holdingTetrimino = new lambda(0,4);
+    if(n == "gamma") _holdingTetrimino = new gamma(0,4);
+    if(n == "biais") _holdingTetrimino = new biais(0,4);
+    if(n == "biaisInv") _holdingTetrimino = new biaisInv(0,4);
 }
 
 /*-------------------VERIF-------------------*/
@@ -156,11 +185,10 @@ bool engine::canTetriminoTurnRight(){
 }
 
 bool engine::fullLine(const std::vector<block> lig){
-    bool tmp = true;
     for(auto x : lig){
-        tmp = tmp && x.boolean;
+        if(!x.boolean) return false;
     }
-    return tmp;
+    return true;
 }
 
 bool engine::emptyCase(const size_t lig, const size_t col){
@@ -171,7 +199,7 @@ bool engine::emptyCase(const size_t lig, const size_t col){
 void engine::updateMatrix(){
     //le tetrimino courant peut se deplacer vers le bas donc je le garde
     if(canTetriminoGoDown()) {
-        std::cout << "le tetrimino courant descend d'une ligne (ligne ++)" << std::endl;
+        //std::cout << "le tetrimino courant descend d'une ligne (ligne ++)" << std::endl;
         goDownTetrimino();
     }
     //le tetrimino courant ne peut pas descendre d'une case donc je le "bloque" et je choisis le suivant
@@ -179,19 +207,19 @@ void engine::updateMatrix(){
         //je regarde si il a detruit des lignes quand il s'est stopé
         int nbErase = eraseLine();
         if (nbErase > 0){
-            std::cout << "le socre augmente\n";
+            //std::cout << "le socre augmente\n";
             emit nbLineErase(nbErase);
         }
-
+        if(_currentTetrimino->getNom() == "bombe") explosionBombe();
         //je prend le suivant en ajoutant un autre
-        addRandomTetrimino();
-        setCurrentTetrimino(_nextTetriminos.front());
-        _nextTetriminos.erase(_nextTetriminos.begin());
-        addCurrentTetrimino();
+        goNextTetrimino();
+        //le tetrimino qui vient de pop ne peut pas descendre donc c'est la fin de la partie
         if(!canTetriminoGoDown()){
             emit endOfGame();
+            emit sound("gameOver");
         }
         emit tetriminoChanged();
+        _holdThisTurn = false;
     }
 }
 
@@ -203,10 +231,11 @@ int engine::eraseLine(){
                nbRemov++;
                return true;
             }
-            else return false;});
+            else return false;
+        });
     _matrix.erase(it, _matrix.end());
     std::vector<block> tmp;
-    for(size_t i = 0; i < 11; i++){
+    for(size_t i = 0; i < 10; i++){
         tmp.push_back({false,Qt::red});
     }
     for(int i = 0; i < nbRemov; i++){
@@ -238,13 +267,22 @@ void engine::suppCurrentTetrimino(){
     }
 }
 
+void engine::goNextTetrimino(){
+    addRandomTetrimino();
+    setCurrentTetrimino(_nextTetriminos.front());
+    _nextTetriminos.erase(_nextTetriminos.begin());
+    addCurrentTetrimino();
+}
+
 void engine::rotateLeftTetrimino(){
     suppCurrentTetrimino();
     if(canTetriminoTurnLeft()){
         _currentTetrimino->rotateLeft();
+        emit sound("move");
     }
     else{
-        std::cout << "rotation vers la gauche impossible\n";
+        //std::cout << "rotation vers la gauche impossible\n";
+        emit sound("moveFail");
     }
     addCurrentTetrimino();
 }
@@ -253,9 +291,11 @@ void engine::rotateRightTetrimino(){
     suppCurrentTetrimino();
     if(canTetriminoTurnRight()){
         _currentTetrimino->rotateRight();
+        emit sound("move");
     }
     else{
-        std::cout << "rotation vers la droite impossible\n";
+        //std::cout << "rotation vers la droite impossible\n";
+        emit sound("moveFail");
     }
     addCurrentTetrimino();
 }
@@ -265,9 +305,11 @@ void engine::TransRightTetrimino(){
     suppCurrentTetrimino();
     if(canTetriminoGoRight()){
         _currentTetrimino->transRight();
+        emit sound("move");
     }
     else{
-        std::cout << "movement vers la droite impossible\n";
+        //std::cout << "movement vers la droite impossible\n";
+        emit sound("moveFail");
     }
     addCurrentTetrimino();
 }
@@ -277,9 +319,11 @@ void engine::TransLeftTetrimino(){
     suppCurrentTetrimino();
     if(canTetriminoGoLeft()){
         _currentTetrimino->transLeft();
+        emit sound("move");
     }
     else{
-        std::cout << "movement vers la gauche impossible\n";
+        //std::cout << "movement vers la gauche impossible\n";
+        emit sound("moveFail");
     }
     addCurrentTetrimino();
 }
@@ -290,6 +334,57 @@ void engine::teleportDown(){
     }
     updateMatrix();
 
+}
+
+void engine::holdCurrentTetrimino(){
+    if(!_holdThisTurn){
+        emit sound("hold");
+        suppCurrentTetrimino();
+        if(_holdingTetrimino == nullptr){
+            setHoldingTetrimino();
+            goNextTetrimino();
+        }
+        else{
+            tetrimino* tmp = _currentTetrimino;
+            _currentTetrimino = _holdingTetrimino;
+            setHoldingTetrimino(tmp->getNom());
+
+            addCurrentTetrimino();
+            emit tetriminoChanged();
+        }
+        _holdThisTurn = true;
+    }
+}
+
+void engine::powerEraseLine(){
+    suppCurrentTetrimino();
+    _matrix.pop_back();
+    std::vector<block> tmp;
+    for(size_t i = 0; i < 10; i++){
+        tmp.push_back({false,Qt::red});
+    }
+
+    _matrix.insert(_matrix.begin(), tmp);
+    addCurrentTetrimino();
+    emit tetriminoChanged();
+}
+
+void engine::currentBecomeBomb(){
+    suppCurrentTetrimino();
+    setCurrentTetrimino(new tetriminoBombe(0,4));
+    addCurrentTetrimino();
+}
+
+void engine::explosionBombe(){
+    sound("explosion");
+    int col = _currentTetrimino->getLesPos().at(0).col;
+    int lig = _currentTetrimino->getLesPos().at(0).ligne;
+    for(int i = -2; i < 3; i++){
+        for(int j = -2; j < 3; j++){
+            try {_matrix.at(lig+i).at(col+j).boolean = false;}
+            catch (...) {}
+        }
+    }
 }
 
 /*-------------------AIDE DEBUG-------------------*/
